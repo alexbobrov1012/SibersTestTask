@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SibersTestTask</string>
+    <string name="attack_label">Attack</string>
+    <string name="defense_label">Defense</string>
+    <string name="hp_label">HP</string>
+    <string name="name_label">Name</string>
+    <string name="label_button_reinitialize">Reinitialize</string>
+    <string name="base_exp_label">Base Exp</string>
+    <string name="height_label">Height</string>
+    <string name="weight_label">Weight</string>
+    <string name="types_label">Types</string>
+    <string name="forms_label">Forms</string>
+    <string name="pokemon_item_description">pokemon_item</string>
+    <string name="pokemon_picture_description">pokemon picture</string>
+</resources>
