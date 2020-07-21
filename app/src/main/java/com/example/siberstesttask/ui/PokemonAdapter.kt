@@ -3,10 +3,12 @@ package com.example.siberstesttask.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.siberstesttask.model.PokemonModel
 import com.example.siberstesttask.R
 import com.example.siberstesttask.databinding.LayoutListItemPokemonBinding
+import com.example.siberstesttask.model.PokemonDiffCallback
 import com.example.siberstesttask.model.sortPokemonBy
 import com.squareup.picasso.Picasso
 
@@ -34,9 +36,9 @@ class PokemonAdapter(private val listener: (PokemonModel) -> Unit) : RecyclerVie
     }
 
     fun setItems(list: List<PokemonModel>) {
-        val previousLastIdx = resultList.size
+        val result = DiffUtil.calculateDiff(PokemonDiffCallback(resultList, list))
         resultList = list
-        notifyItemRangeInserted(previousLastIdx, list.size)
+        result.dispatchUpdatesTo(this)
     }
 
     fun sortItems(attack: Boolean, defense: Boolean, hp: Boolean) {
